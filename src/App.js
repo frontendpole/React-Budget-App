@@ -12,7 +12,7 @@ import GlobalStyles from './index.css';
 
 import theme from './utils/theme';
 
-import { Navigation } from './components';
+import { Navigation, Wrapper } from './components';
 
 
 
@@ -25,11 +25,20 @@ function App() {
         <Navigation items={[
           { content: 'Homepage', to: '/' },
           { content: 'Budget', to: '/budget' }
-        ]} />
-        <Switch>
-          <Route exact path="/">Homepage</Route>
-          <Route path="/budget">Budget Page</Route>
-        </Switch>
+        ]}
+          RightElement={(
+            <div>
+              <button>pl</button>
+              <button>en</button>
+            </div>
+          )}
+        />
+        <Wrapper>
+          <Switch>
+            <Route exact path="/">Homepage</Route>
+            <Route path="/budget">Budget Page</Route>
+          </Switch>
+        </Wrapper>
       </Router>
     </ThemeProvider>
   );
